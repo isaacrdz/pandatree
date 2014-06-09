@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Customers</title>
+</head>
+<body>
+	{% for customer in customers %}
+	<h1>Cliente: {{customer.name}}</h1>
+	<p>Email: {{customer.email}}</p>
+	<p>Phone: {{customer.phone_number}}</p>
+	<p>Service: {{customer.service}}</p>
+	<p>Description: {{customer.description}}</p>
+	<p>Fecha: {{customer.timestamp}}</p>
+	{% endfor%}
+</body>
+</html>

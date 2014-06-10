@@ -1,0 +1,89 @@
+@media screen and (min-width:768px){
+
+header .container
+{
+	border:1px solid red;
+	max-width: 1200px;
+	width: 100% ;
+
+}
+
+header .container nav
+{
+	display: inline-block;
+	border:1px solid pink;
+	float: right;
+	margin-right: 1em;
+
+
+}
+header .container nav .nav-ul li
+{
+	display: inline-block;
+	margin-left: 5em;
+	font-size: 20px;
+}
+
+section.main-section 
+{
+	
+	border: 1px yellow solid ;	
+	margin: 0 auto ;
+	text-align: center;
+	padding: 6em 0 ;
+	max-width: 1200px;
+	width: 100%;
+	box-sizing:border-box;
+}
+
+
+
+section.main-section .section-item
+{
+	max-width: 500px;
+	width:100%;
+	border: 1px orange solid ;	
+	box-sizing:border-box;
+	display: inline-block;
+	margin: 0
+}
+
+section.main-section .img-item
+{
+	display: inline-block;
+}
+section.services 
+{
+	background: white;
+	padding: 3em 1em;
+	box-sizing:border-box;
+	margin-bottom: 3em;
+}
+
+section.services .container 
+{
+	border: 1px solid red;
+	max-width: 1200px;
+	width: 100% ;
+	text-align: center;
+}
+
+section.services .container .service-item
+{
+	display: inline-block;
+	margin:0 2em;
+	text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+}

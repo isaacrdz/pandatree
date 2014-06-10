@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '03umk)rg+@reefdt98tj-$@au=dw0+y02f0*r^nme%a2c$^5#*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'customers',
     'blogs',
     'south',
-    'gunicorn',
+    'gunicorn'
 
 )
 

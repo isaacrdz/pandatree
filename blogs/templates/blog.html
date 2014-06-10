@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
 {{blog.imagen}}
 <p>{{blog.contenido }}</p>	
 
-
+<img src="{% static "img/1.png" %}" >
 
 </body>
 </html>

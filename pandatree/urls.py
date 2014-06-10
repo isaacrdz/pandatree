@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^customers$', 'customers.views.customers', name='customers'),
     url(r'^contact$', 'customers.views.contact', name='contact'),
     url(r'^thanks$', 'customers.views.thanks', name='thanks'),
+    url(r'^blog/(?P<slug>[\w\-/w]+)/', 'blogs.views.blog', name='blog'),
     url(r'^admin/', include(admin.site.urls)),
 )

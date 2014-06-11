@@ -82,10 +82,15 @@ header .container nav
 
 header .container nav .nav-ul li
 {
-	font-family: "pacificoregular";
 
 }
+header .container nav .nav-ul li a
+{
+	font-family: "pacificoregular";
+	text-decoration: none;
+	color: white;
 
+}
 
 {
 

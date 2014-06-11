@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'services',
     'customers',
-    'blogs',
+    'blog',
     'south',
     'gunicorn'
 

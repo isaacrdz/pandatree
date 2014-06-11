@@ -1,6 +1,9 @@
 from django.conf.urls import patterns, include, url
+from blog import views
+from django.conf.urls.static import static
 
 from django.contrib import admin
+from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -13,6 +16,14 @@ urlpatterns = patterns('',
     url(r'^customers$', 'customers.views.customers', name='customers'),
     url(r'^contact$', 'customers.views.contact', name='contact'),
     url(r'^thanks$', 'customers.views.thanks', name='thanks'),
-    url(r'^blog/(?P<slug>[\w\-/w]+)/', 'blogs.views.blog', name='blog'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^blog/', views.IndexView.as_view(), name='blog'),
+     url(r'(?P<slug>[^/]+)/$', views.PostView.as_view(), name='post'),
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+
+
+   
+      
+
+
 )

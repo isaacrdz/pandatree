@@ -53,7 +53,9 @@
 	<!-- Seccion de Servicios -->
 
 	<section class="blog">
-		<div class="container">
+
+		<div class="container-blog ">
+
 				{% for post in posts%}
 			<section class="blog-item">
 
@@ -75,6 +77,7 @@
 			<a href="blog/{{post.slug}}">Ver mas</a>
 			</section>
 				{% endfor%}
+
 		</div>
 		
 	</section>
@@ -136,19 +139,31 @@
 
 
 		
-		<div class="container filtro">
+		<div class="container-customers filtro">
+
 			<h3 class="font-style-two color-2">Ellos confian en nosotros</h3>
-			<figure><img class="img-size" src="{% static "img/rivero.png" %}" alt="Grupo Rivero"></img></figure>
+
+			<figure>
+				<img class="img-size" src="{% static "img/rivero.png" %}" alt="Grupo Rivero"></img>
+			</figure>
 
 			
-			<figure><img class="img-size filtro" src="{% static "img/maquinaria.png" %}" alt="Clientes"><a href=""></a></img></figure>
+			<figure>
+				<img class="img-size filtro" src="{% static "img/maquinaria.png" %}" alt="Clientes"><a href=""></a></img>
+			</figure>
 
 			
-			<figure><img class="img-size" src="{% static "img/ampi.png" %}" alt="Clientes"><a href=""></a></img></figure>
+			<figure>
+				<img class="img-size" src="{% static "img/ampi.png" %}" alt="Clientes"><a href=""></a></img>
+			</figure>
 
-			<figure><img class="img-size" src="{% static "img/heypizza.png" %}" alt="Clientes"><a href=""></a></img></figure>
+			<figure>
+				<img class="img-size" src="{% static "img/heypizza.png" %}" alt="Clientes"><a href=""></a></img>
+			</figure>
 
-			<figure><img class="img-size" src="{% static "img/lacasadelqueso.png" %}" alt="Clientes"><a href=""></a></img></figure>
+			<figure>
+				<img class="img-size" src="{% static "img/lacasadelqueso.png" %}" alt="Clientes"><a href=""></a></img>
+			</figure>
 
 		</div>
 	</section>

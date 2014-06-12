@@ -76,10 +76,59 @@ section.services .container .service-item
 
 }
 
+section.blog
+{
+	background: white;
+	padding: 3em 1em;
+	box-sizing:border-box;
+	margin-bottom: 3em;
+}
+section.blog .container-blog 
+{
+	
+	border: 1px solid red;
+	max-width: 1200px;
+	width: 100% ;
+	text-align: center;
+
+}
 
 
+section.blog .container-blog .blog-item
+{
+	display: inline-block;
+	margin:0 2em;
+	text-align: center;
+}
 
 
+section.customers 
+{
+	background: white;
+	padding: 3em 1em;
+	box-sizing:border-box;
+	margin-bottom: 3em;
+}
+
+
+section.customers .container-customers
+{
+	border: 1px solid red;
+	max-width: 1200px;
+	width: 100% ;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+section.customers .container-customers figure
+{
+	display: inline-block;
+	margin:1em 5em;
+	text-align: center;
+}
+
+}
 
 
 

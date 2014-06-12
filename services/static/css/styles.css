@@ -294,7 +294,8 @@ filter: none;
 transition: all 0.5s ease;
 }
 
-.blog-item
+
+section.blog .container-blog .blog-item.blog-item
 {
 	border:1px gray solid;
 	padding: 1em;
@@ -302,8 +303,24 @@ transition: all 0.5s ease;
 	margin-bottom: 1em;
 }
 
+
+section.blog .container-blog 
+{
+	max-width: 400px;
+	width:100%;
+	margin:0 auto;
+	padding: 1em;
+	box-sizing:border-box;
+}
+
 .blog-img-size
 {
 	max-width: 310px;
 	width: 100%;
+}
+
+.font-family-two
+{
+	font-family: "pacificoregular";
+		
 }

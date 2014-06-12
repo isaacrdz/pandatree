@@ -1,22 +1,16 @@
-from django.views.generic import TemplateView
-from . import models
+from django.shortcuts import render,get_object_or_404
+from django.http import HttpResponse,Http404
+from .models import Post
+from models import *
 
 
-class IndexView(TemplateView):
-    model = models.Post
-    template_name = 'blog.html'
+def blog(request):
+	posts = Post.objects.all()
+	template = 'blog.html'
+	return render(request,template,{'posts':posts,'request':request})
 
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(*kwargs)
-        context['posts'] = self.model.objects.all()
-        return context
+def blog_view(request, slug):
+	post = get_object_or_404(Post, slug = slug)
+	template = 'post.html'
+	return render(request,template,{'post':post,})
 
-
-class PostView(TemplateView):
-    model = models.Post
-    template_name = 'post.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(PostView, self).get_context_data(**kwargs)
-        context['post'] = self.model.objects.filter(slug=context['slug'])
-        return context

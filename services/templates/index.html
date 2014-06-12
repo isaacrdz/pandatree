@@ -10,7 +10,7 @@
 <body>
 	<header>
 	<div class="container">
-		<a class="logo" href="">PandaTree</a>
+		<a class="logo" href="">PandaHominid</a>
 		<nav>
 			<ul class="nav-ul">
 				<li><a href="/">home</a></li>
@@ -51,6 +51,33 @@
 	</header>
 
 	<!-- Seccion de Servicios -->
+
+	<section class="blog">
+		<div class="container">
+				{% for post in posts%}
+			<section class="blog-item">
+
+				{% load thumbnail %}
+
+					<h2>{{post.title}} </h2>
+
+				{% thumbnail post.image "250"  as im %}
+	   		 		<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+				{% endthumbnail %}
+
+				<p class="blog-content">
+					{{post.content|truncatechars:15}}
+				</p>
+				<div>
+					{{post.timestamp | timesince}}
+				</div>
+
+			<a href="blog/{{post.slug}}">Ver mas</a>
+			</section>
+				{% endfor%}
+		</div>
+		
+	</section>
 
 	<section class="services">
 			<h3 class="font-style-two  tcenter color-2">Over 140,000 developers deploy to our cloud.</h3>

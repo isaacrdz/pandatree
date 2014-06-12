@@ -1,24 +1,17 @@
 from django.db import models
+from sorl.thumbnail import ImageField
 
 # Create your models here.
+class Post(models.Model):
+	title = models.CharField(max_length=50)
+	image = models.ImageField(upload_to='static')
+	content = models.TextField()
+  	timestamp = models.DateTimeField(auto_now_add=True)
+  	slug = models.SlugField(max_length=100, blank=True)
+  	
 
-class AuditedModel(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+  	def __unicode__(self):
+  		return self.title
 
-    class Meta:
-        abstract = True
-
-
-class Post(AuditedModel):
-    title = models.CharField(max_length=50, unique=True)
-    img = models.ImageField(upload_to='media/')
-    content = models.TextField(max_length=100)
-    slug = models.SlugField(max_length=100, blank=True)
-
-    def save(self, *args, **kwargs):
-        self.slug = self.title.lower().replace(' ', '-')
-        super(Post, self).save(*args, **kwargs)
-
-    def __unicode__(self):
-        return self.title
+  	def get_absolute_url(self):
+		return '/blog/%s/' % self.slug

@@ -39,8 +39,10 @@ INSTALLED_APPS = (
     'services',
     'customers',
     'blog',
-    'south',
-    'gunicorn'
+    #'south',
+    'gunicorn',
+    'sorl.thumbnail',
+
 
 )
 

@@ -1,140 +1,28 @@
-{% load staticfiles %}
+
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
-    <link rel="stylesheet" href="{% static "css/responsive.css" %}">
-    <title>Home</title>
+	<meta charset="UTF-8">
+	<title>home</title>
 </head>
 <body>
-    <header>
-    <div class="container">
-        <a class="logo" href="">PandaTree</a>
-        <nav>
-            <ul class="nav-ul">
-                <li><a href="/">home</a></li>
-                <li><a href="#">about us</a></li>
-                <li><a href="#">portfolio</a></li>
-                <li><a href="/blog">blog</a></li>
-                <li><a href="#">contact us</a></li>
-            </ul>
-        </nav>
-    </div>
+{% load thumbnail %}
+{% for post in posts%}
+
+<h1>{{post.title}}</h1>
+{% thumbnail post.image "250"  as im %}
+    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+{% endthumbnail %}
+<p>{{post.timestamp | timesince}}</p>
+<p>{{post.content|truncatechars:15}} </p>
+	
+	<a href="blog/{{post.slug}} ">ver mas</a>
+
+ {% endfor%}
 
 
 
-    <!-- Seccion de Principal -->
-    <section class="main-section">
-
-        <div class="section-item">
-            <h2 class="font-style-two">Primera seccion:</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, facilis, a, cum molestias id iusto quis distinctio dolorem dolor culpa assumenda numquam ratione doloribus accusantium optio inventore dolores vitae quo.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, facilis, a, cum molestias id iusto quis distinctio dolorem dolor culpa assumenda numquam ratione doloribus accusantium optio inventore dolores vitae quo.</p>
-
-        </div>
-
-            <div class="section-item">
-            <h2 class="font-style-two">Primera seccion:</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, facilis, a, cum molestias id iusto quis distinctio dolorem dolor culpa assumenda numquam ratione doloribus accusantium optio inventore dolores vitae quo.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, facilis, a, cum molestias id iusto quis distinctio dolorem dolor culpa assumenda numquam ratione doloribus accusantium optio inventore dolores vitae quo.</p>
-
-        </div>
-        <!-- 
-    </section>
-        <div class="section-item-bottom tcenter">
-            PandaTree vuelve a Mexico
-        </div>
-         -->
-    <!-- Termina Seccion de Principal -->
-
-    </header>
-
-    <!-- Seccion de Servicios -->
-
-    <section class="services">
-            <h3 class="font-style-two  tcenter color-2">Over 140,000 developers deploy to our cloud.</h3>
-        <div class="container">
-
-        {% for Post in posts %}
-            <section class="service-item tcenter ">
-        <figure>
-            <img class="img-post" src="{{ MEDIA_URL }}{{ Post.img }}">
-        </figure>
-        <section class="content">
-            <h2>{{ Post.title }}</h2>
-            <h3>{{Post.created | timesince }}</h3>
-            <a class="button" href="/{{ Post.slug }}" > Ver más </a>
-        </section>
-
-                
-            </section>
-    {% endfor %}
-            
-         
 
 
- 
-<style>
-    img
-    {
-        width: 100px;
-    }
-</style>
-        
-
-            
-        </div>
-        
-    </section>
-    <!-- Termina Seccion de servicios -->
-
-
-    <!-- Forma de inscripcion -->
-
-    <section class="item-form-two color-1">
-    <div class="container  ">
-        
-        <h3 class="font-style-two">Escribenos</h3>
-        <form action="">
-            <input type="email"> <br><br>
-            <button>enviar</button>
-        </form>
-    </div>
-        
-    </section>
-
-    <section class="customers tcenter">
-    
-
-
-
-        
-        <div class="container filtro">
-            <h3 class="font-style-two color-2">Ellos confian en nosotros</h3>
-            <figure><img class="img-size" src="{% static "img/rivero.png" %}" alt="Grupo Rivero"></img></figure>
-
-            
-            <figure><img class="img-size filtro" src="{% static "img/maquinaria.png" %}" alt="Clientes"><a href=""></a></img></figure>
-
-            
-            <figure><img class="img-size" src="{% static "img/ampi.png" %}" alt="Clientes"><a href=""></a></img></figure>
-
-            <figure><img class="img-size" src="{% static "img/heypizza.png" %}" alt="Clientes"><a href=""></a></img></figure>
-
-            <figure><img class="img-size" src="{% static "img/lacasadelqueso.png" %}" alt="Clientes"><a href=""></a></img></figure>
-
-        </div>
-    </section>
-
-    
-    <footer>
-        <div class="tcenter">
-            <p class="font-family-two">
-            PandaTree
-                
-            </p>
-        </div>
-    </footer>
 </body>
 </html>

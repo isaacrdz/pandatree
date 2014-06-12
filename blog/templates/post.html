@@ -1,23 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>post</title>
-</head>
-<body>
+{% load thumbnail %}
 
-    {% for Post in post %}
-       	<figure>
-       		 <img class="img-post" src="{{ MEDIA_URL }}{{ Post.img }}">
-       	</figure>
-        <section class="content">
-        	<h2>{{ Post.title }}</h2>
-	       	<h3> {{ Post.created }}</h3>	        
-          <p>{{ Post.content }}</p>
-          <a class="button" href="/blog"> Regresar </a>
-        </section>        
-    {% endfor %}
+<h1>{{post.title}}</h1>
+{% thumbnail post.image "500"  as im %}
+    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+{% endthumbnail %}
+
+<p>{{post.content  }}</p>
+<p>{{post.timestamp | timesince}}</p>
 
 
-</body>
-</html>
+<a href="/">regresar</a>

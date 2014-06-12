@@ -293,3 +293,17 @@ filter: none;
 -o-transition: all 0.5s ease;
 transition: all 0.5s ease;
 }
+
+.blog-item
+{
+	border:1px gray solid;
+	padding: 1em;
+	box-sizing:border-box;
+	margin-bottom: 1em;
+}
+
+.blog-img-size
+{
+	max-width: 310px;
+	width: 100%;
+}
